@@ -1,0 +1,9 @@
+
+
+namespace SerialPortTest
+{
+    interface IController
+    {
+
+    }
+}
