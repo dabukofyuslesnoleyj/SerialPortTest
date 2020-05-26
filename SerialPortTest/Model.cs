@@ -14,7 +14,7 @@ namespace SerialPortTest
     class DataTypeModel : IDataTypeModel
     {
         Dictionary<string, IDataType>
-        public IDataType GetData(string key)
+        public IDataType GetData(string key)an
         {
             return output;
         }
@@ -49,20 +49,7 @@ namespace SerialPortTest
     interface IDataType
     {
         void SetValueWithString(string input);
-        string GetValueAsString();
-    }
-
-    class DataType<T>
-    {
-        T value;
-        public void SetValue(T input)
-        {
-
-        }
-        public T GetValue()
-        {
-            return value;
-        }
+        T GetValue<T>();
     }
 
     class StringDataType : IDataType
@@ -73,7 +60,7 @@ namespace SerialPortTest
         {
             value = input;
         }
-        public string GetValueAsString()
+        public T GetValue<T>()
         {
             return value;
         }
@@ -87,7 +74,7 @@ namespace SerialPortTest
         {
             value = Int32.Parse(input);
         }
-        public string GetValueAsString()
+        public string GetValue()
         {
             return value + "";
         }
@@ -101,7 +88,7 @@ namespace SerialPortTest
         {
             value = float.Parse(input);
         }
-        public string GetValueAsString()
+        public string GetValue()
         {
             return value + "";
         }
