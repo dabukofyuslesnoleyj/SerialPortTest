@@ -1,5 +1,7 @@
 
 
+using System.Collections.Generic;
+
 namespace SerialPortTest
 {
     interface ILogger
@@ -11,5 +13,24 @@ namespace SerialPortTest
     interface ILoggerLIstener
     {
         void Update(string s);
+    }
+
+    class Logger : ILogger
+    {
+        List<string> logs;
+        List<ILoggerLIstener> loggerListeners;
+
+        public void WriteLog(string s)
+        {
+            logs.Add(s);
+
+            foreach (ILoggerLIstener loggerLIstener in loggerListeners)
+                loggerLIstener.Update(s);
+        }
+
+        public void Attach(ILoggerLIstener listener)
+        {
+            loggerListeners.Add(listener);
+        }
     }
 }
