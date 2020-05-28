@@ -33,4 +33,12 @@ namespace SerialPortTest
             loggerListeners.Add(listener);
         }
     }
+
+    class FileWriterLoggerListener : ILoggerLIstener
+    {
+        public void Update(string s)
+        {
+
+        }
+    }
 }
