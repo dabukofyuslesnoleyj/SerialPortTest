@@ -5,7 +5,7 @@ namespace SerialPortTest
 {
     interface IWriter
     {
-        void write(string s);
+        void Write(string s);
         void Attach(IWriterListener listener);
     }
 
@@ -18,7 +18,7 @@ namespace SerialPortTest
     {
         List<IWriterListener> writerListeners;
 
-        public void write(string s)
+        public void Write(string s)
         {
             foreach (IWriterListener writerListener in writerListeners)
                 writerListener.Update(s);
@@ -41,7 +41,7 @@ namespace SerialPortTest
 
         public void Update(string s)
         {
-            
+            serialPort.WriteLine(s);   
         }
     }
 }
