@@ -30,6 +30,12 @@ namespace SerialPortTest
             _continue = true;
         }
 
+        public SerialPortReader(SerialPort _serialPort)
+        {
+            serialPort = _serialPort;
+            _continue = true;
+        }
+
         public void Read()
         {
             while (_continue)

@@ -39,6 +39,11 @@ namespace SerialPortTest
             serialPort = new SerialPort();
         }
 
+        public SerialPortWriterListener(SerialPort _serialPort)
+        {
+            serialPort = _serialPort;
+        }
+
         public void Update(string s)
         {
             serialPort.WriteLine(s);   
