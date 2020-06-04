@@ -64,6 +64,16 @@ namespace SerialPortTest
         }
     }
 
+    class StringReaderListener : IReaderListener
+    {
+        public string message;
+
+        public void Update(string s)
+        {
+            message += s + "\n";
+        }
+    }
+
     class TextBoxReaderListener : IReaderListener
     {
         TextBox textbox;
