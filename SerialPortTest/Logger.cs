@@ -7,10 +7,10 @@ namespace SerialPortTest
     interface ILogger
     {
         void WriteLog(string s);
-        void Attach(ILoggerLIstener listener);
+        void Attach(ILoggerListener listener);
     }
 
-    interface ILoggerLIstener
+    interface ILoggerListener
     {
         void Update(string s);
     }
@@ -18,23 +18,23 @@ namespace SerialPortTest
     class Logger : ILogger
     {
         List<string> logs;
-        List<ILoggerLIstener> loggerListeners;
+        List<ILoggerListener> loggerListeners;
 
         public void WriteLog(string s)
         {
             logs.Add(s);
 
-            foreach (ILoggerLIstener loggerLIstener in loggerListeners)
+            foreach (ILoggerListener loggerLIstener in loggerListeners)
                 loggerLIstener.Update(s);
         }
 
-        public void Attach(ILoggerLIstener listener)
+        public void Attach(ILoggerListener listener)
         {
             loggerListeners.Add(listener);
         }
     }
 
-    class FileWriterLoggerListener : ILoggerLIstener
+    class FileWriterLoggerListener : ILoggerListener
     {
         public void Update(string s)
         {

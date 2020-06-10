@@ -11,7 +11,7 @@ namespace SerialPortTest
     class SerialPortController : IController
     {
         SerialPort serialPort;
-        IWriter seralPortWriter;
+        IWriter serialPortWriter;
         IReader serialPortReader;
         StringReaderListener serialPortMessage;
         bool _continue;
@@ -20,11 +20,11 @@ namespace SerialPortTest
         {
             _continue = true;
             serialPort = _serialPort;
-            seralPortWriter = new SerialPortWriter();
+            serialPortWriter = new SerialPortWriter();
             serialPortReader = new SerialPortReader(_serialPort);
 
             serialPortReader.Attach(serialPortMessage);
-            seralPortWriter.Attach(new SerialPortWriterListener(_serialPort));
+            serialPortWriter.Attach(new SerialPortWriterListener(_serialPort));
         }
 
         public void ReadSerialPort()
@@ -34,7 +34,7 @@ namespace SerialPortTest
 
         public void WriteSerialPort(string s)
         {
-            seralPortWriter.Write(s);
+            serialPortWriter.Write(s);
         }
     }
 }

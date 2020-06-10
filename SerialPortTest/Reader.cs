@@ -5,7 +5,8 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace SerialPortTest
-{
+{  
+
     interface IReader
     {
         void Read();
