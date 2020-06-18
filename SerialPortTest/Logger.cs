@@ -20,6 +20,12 @@ namespace SerialPortTest
         List<string> logs;
         List<ILoggerListener> loggerListeners;
 
+        public Logger()
+        {
+            logs = new List<string>();
+            loggerListeners = new List<ILoggerListener>();
+        }
+
         public void WriteLog(string s)
         {
             logs.Add(s);

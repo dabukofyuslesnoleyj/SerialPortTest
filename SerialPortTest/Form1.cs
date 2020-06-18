@@ -12,9 +12,12 @@ namespace SerialPortTest
 {
     public partial class Form1 : Form
     {
+        SerialPortController serialPortController;
+        ILogger logger;
         public Form1()
         {
             InitializeComponent();
+            logger = new Logger();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -39,7 +42,7 @@ namespace SerialPortTest
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
