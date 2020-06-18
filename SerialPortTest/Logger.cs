@@ -1,6 +1,7 @@
 
 
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace SerialPortTest
 {
@@ -42,6 +43,16 @@ namespace SerialPortTest
 
     class FileWriterLoggerListener : ILoggerListener
     {
+        public void Update(string s)
+        {
+
+        }
+    }
+
+    class TextBoxLoggerListener : ILoggerListener
+    {
+        TextBox textBox;
+
         public void Update(string s)
         {
 

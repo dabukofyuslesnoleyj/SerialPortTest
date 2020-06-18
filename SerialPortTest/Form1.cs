@@ -32,12 +32,12 @@ namespace SerialPortTest
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-
+            logger.WriteLog("MESSAGE WAS SENT");
         }
 
         private void pingButton_Click(object sender, EventArgs e)
         {
-
+            logger.WriteLog("PING SENT");
         }
 
         private void closeButton_Click(object sender, EventArgs e)
